@@ -1,0 +1,11 @@
+<form class="text-center border border-light p-5 tarea" (ngSubmit)="guardar()" #tareaForm="ngForm">
+
+    <p class="h4 mb-4">Nueva tarea</p>
+
+    <input type="text" [(ngModel)]="todoItem.name" name="name"  class="form-control mb-4" placeholder="Tarea" (keyup.enter)="nuevaTarea()" #txtTarea="ngModel">
+
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block waves-effect waves-light" type="submit">Guardar</button>
+
+  </form>

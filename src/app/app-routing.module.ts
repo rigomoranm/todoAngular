@@ -1,7 +1,33 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LayoutComponent } from './layout/layout/layout.component';
+import { HomeComponent } from './components/home/home.component';
+import { TaskComponent } from './components/task/task.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  ///Este se agrega para que cuando no tenga nada mande a login
+  { 
+    path: '',
+    redirectTo: '/home', 
+    pathMatch: 'full' 
+  },
+
+  { 
+      path: '', 
+        component: LayoutComponent,
+        children:[
+            {
+              path:'home',
+              component:HomeComponent
+            },
+            {
+              path:'task',
+              component:TaskComponent
+            }
+
+        ]
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
