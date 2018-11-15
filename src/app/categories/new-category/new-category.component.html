@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Crear Categoria</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="category.nombre" placeholder="Nombre ">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign="space-around center">
+  <button mat-raised-button (click)="onNoClick()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="guardar()" cdkFocusInitial [disabled]="(!category.nombre || !category.nombre.trim())">Guardar</button>
+</div>

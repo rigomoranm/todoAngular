@@ -1,0 +1,41 @@
+<h2 class="primary-heading text-center mt-5">Lista de Categorias</h2>
+<div fxLayout="row" dir="rtl">
+  <button mat-raised-button color="accent" (click)="crear()">
+    <mat-icon>add_to_queue</mat-icon>
+    Crear
+  </button>
+</div>
+<div class="col-md-12">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" fxFlex="5">#</th>
+          <th scope="col" fxFlex>Nombre</th>
+          <th scope="col" fxFlex="15"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr fxLayout="row" *ngFor="let item of categories; let i = index">
+          <th fxFlex="5">{{(i+1)}}</th>
+          <td fxFlex (click)="verTodos(item)" class="showPointer">
+            {{item.nombre}}
+          </td>
+          <td fxFlex="20">
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+              <button mat-fab color="primary" (click)="verTodos(item)">
+                <mat-icon>list</mat-icon>
+              </button>
+              <button mat-fab color="primary" (click)="editar(i,item)">
+                <mat-icon>create</mat-icon>
+              </button>
+              <button mat-fab color="warn" (click)="eliminar(i,item)">
+                <mat-icon>backspace</mat-icon>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

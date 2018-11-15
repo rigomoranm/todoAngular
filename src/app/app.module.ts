@@ -11,6 +11,17 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MDBBootstrapModule, NavbarModule, WavesModule } from 'angular-bootstrap-md';
 import { TaskComponent } from './components/task/task.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { EditCategoryComponent } from './categories/edit-category/edit-category.component';
+import { NewCategoryComponent } from './categories/new-category/new-category.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -18,14 +29,30 @@ import { TaskComponent } from './components/task/task.component';
     NavBarComponent,
     LayoutComponent,
     HomeComponent,
-    TaskComponent
+    TaskComponent,
+    CategoriesComponent,
+    EditCategoryComponent,
+    NewCategoryComponent,
+    ConfirmDeleteComponent
+  ],
+  entryComponents: [
+    EditCategoryComponent,
+    NewCategoryComponent,
+    ConfirmDeleteComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
